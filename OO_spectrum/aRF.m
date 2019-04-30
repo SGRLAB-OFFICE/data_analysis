@@ -245,7 +245,7 @@ classdef (Abstract) aRF
         function chi2 = err_fun_boot_w(obj,p,ind)
             
             obj = obj.calcSpectrum(p);
-            chi2 = sum(sum(sum(((obj.dataMatrix(ind)-obj.simMatrix(ind)).^2).*obj.weightMatrix)));
+            chi2 = sum(sum(sum(((obj.dataMatrix(ind)-obj.simMatrix(ind)).^2).*obj.weightMatrix(ind))));
             
         end
         function out = residuals(obj,p)
